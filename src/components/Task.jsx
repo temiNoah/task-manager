@@ -9,7 +9,9 @@ export default function Task({ taskIndex, colIndex }) {
   const col = columns.find((col, i) => i === colIndex);
   const task = col.tasks.find((task, i) => i === taskIndex);
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+  const priorityFilter = useSelector(state=> state.priorityFilter);
 
+  // alert(JSON.stringify(priorityFilter))
   let completed = 0;
   let subtasks = task.subtasks;
   subtasks.forEach((subtask) => {
@@ -24,7 +26,8 @@ export default function Task({ taskIndex, colIndex }) {
   }
 
   return (
-    <div >
+    <div style={{ display: `${priorityFilter === 'all' || priorityFilter === undefined
+        ? 'block': task.priority === priorityFilter ? 'block':'none' }`}}>
       <div
         // draggable
         // onDragStart={handleOnDrag}

@@ -30,7 +30,7 @@ export default function AddEditTaskModal({
   ]);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [priority, setPriority] = useState('High');
+  const [priority, setPriority] = useState('all');
   const [assignee, setAssignee] = useState(null);
   const [isLoading ,setIsLoading] = useState(false)
 
@@ -221,10 +221,10 @@ export default function AddEditTaskModal({
               value={priority}
               onChange={(e) => setPriority(e.target.value)}
             >
-             
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value="all">All</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
             </select>
           </div>
         </div>

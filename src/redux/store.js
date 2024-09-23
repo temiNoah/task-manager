@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import boardsSlice from "./boardsSlice";
 import themeSlice from "./themeSlice";
+import prioritySlice from "./prioritySlice";
+
 import { saveState, loadState } from '../utility/localStorage'
 
 //const preloadedState = loadState();
@@ -8,7 +10,8 @@ import { saveState, loadState } from '../utility/localStorage'
 const store = configureStore({
     reducer: {
         boards: boardsSlice.reducer,
-        theme: themeSlice.reducer
+        theme: themeSlice.reducer,
+        priorityFilter: prioritySlice.reducer,
     }
 })
 
