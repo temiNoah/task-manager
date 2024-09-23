@@ -57,6 +57,7 @@ export default function Header() {
       <header>
         <div className="logo-container">
           {/* <img className="logo" src={logo} alt="logo" /> */}
+          <i class="ri-list-check-3" style={{color:'rgba(98,95,199,1)', fontSize:'30px'}}></i>
           {isBigScreen && <h3 className="logo-text">Task Manager</h3>}{" "}
         </div>
 

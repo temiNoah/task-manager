@@ -56,12 +56,12 @@ export default function Column({ colIndex ,color}) {
     <div className="column">
           <div>
 
-        <div style={{ display: 'flex', flexDirection: 'row', gap: 10, justifyContent: 'center' }} className="col-border">
-           <p style={{ width: '10px', height: '10px', border: '0px solid #000', borderRadius: '100%', backgroundColor: `${color}`, padding: '5px' }}></p>
-                <p className="col-name heading-S">
-                {col.name} ({col.tasks.length})
-                </p>
-        </div>
+              <div style={{ display: 'flex', flexDirection: 'row', gap: 10, justifyContent: 'center',marginBottom:'10px' }} className="col-border">
+                <p style={{ width: '10px', height: '10px', border: '0px solid #000', borderRadius: '100%', backgroundColor: `${color}`, padding: '5px' }}></p>
+                      <p className="col-name heading-S">
+                      {col.name} ({col.tasks.length})
+                      </p>
+              </div>
             
             { col.tasks.map((task, index) => {
                        

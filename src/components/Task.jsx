@@ -38,10 +38,15 @@ export default function Task({ taskIndex, colIndex }) {
           {completed} of  {subtasks.length} subtask
         </p>
 
-        <p style={{ paddingLeft: '80%' ,display:'flex',flexDirection:'row' }}>
-           <i class="ri-user-line" style={{ fontSize: '12px', fontWeight: '100' }}></i> 
-           <span style={{fontSize:'12px' ,fontWeight:'100',marginLeft:5}}>{task.assignee}</span>
-        </p>
+      <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',marginTop:'10px'}}>
+          <p style={{ fontSize: '10px', fontWeight: '100' }}>{task.priority}</p>
+          <p style={{  display:'flex',flexDirection:'row' }}>
+            <i class="ri-user-line" style={{ fontSize: '10px', fontWeight: '100' }}></i> 
+            <span style={{fontSize:'10px' ,fontWeight:'100',marginLeft:5}}>{task.assignee}</span>
+          </p>
+
+          
+        </div>
       </div>
       {isTaskModalOpen && (
         <TaskModal

@@ -56,7 +56,8 @@ export default function HeaderDropdown({
         </div>
 
         <div className="theme-toggle">
-          <img src={lightIcon} alt="sun indicating light mode" />
+          {/* <img src={lightIcon} alt="sun indicating light mode" style={{color:'yellow'}} /> */}
+          <i class="ri-sun-line" style={{ color: '#FFD700' ,fontSize:'20px' }}></i>
           <label className="switch">
             <input
               type="checkbox"
@@ -65,7 +66,8 @@ export default function HeaderDropdown({
             />
             <span className="slider round"></span>
           </label>
-          <img src={darkIcon} alt="moon indicating dark mode" />
+          {/* <img src={darkIcon} alt="moon indicating dark mode" /> */}
+          <i class="ri-moon-clear-fill" style={{ fontSize: '20px' }}></i>
         </div>
       </div>
     </div>
