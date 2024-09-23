@@ -31,6 +31,7 @@ export default function AddEditTaskModal({
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [priority, setPriority] = useState('High');
+  const [assignee, setAssignee] = useState(null);
   const [isLoading ,setIsLoading] = useState(false)
 
 
@@ -86,6 +87,7 @@ export default function AddEditTaskModal({
         boardsSlice.actions.addTask({
           title,
           description,
+          assignee,
           subtasks,
           status,
           newColIndex,
@@ -101,6 +103,7 @@ export default function AddEditTaskModal({
         boardsSlice.actions.editTask({
           title,
           description,
+          assignee,
           subtasks,
           status,
           taskIndex,
@@ -158,8 +161,22 @@ export default function AddEditTaskModal({
           />
         </div>
 
+        <label htmlFor="task-assignee-input">Assignee</label>
+        <div className="input-container">
+          <input
+            value={assignee}
+            onChange={(e) => setAssignee(e.target.value)}
+            id="task-assignee-input"
+            type="text"
+            placeholder="e.g. John Doe"
+          />
+          
+        </div>
 
-        <div className="" style={{display:'flex' , flexDirection:'row' , gap:0, justifyContent:'space-between',marginBottom:'10px'}}>
+
+
+
+        <div className="" style={{display:'flex' , flexDirection:'row' , gap:0, justifyContent:'space-between',margin:'10px 0px 10px 0px'}}>
           <div style={{ flexDirection: 'column', width: '40%' }}>
             <label>Start Date:</label>
             <input
@@ -214,7 +231,7 @@ export default function AddEditTaskModal({
 
 
 
-        <label>Assignee Name:</label>
+        <label>SubTask:</label>
         <div className="modal-columns">
           {subtasks.map((subtask, index) => {
             return (

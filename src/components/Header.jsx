@@ -61,7 +61,7 @@ export default function Header() {
         </div>
 
         <div className="header-name-container heading-L">
-          <h3 className="header-name">{board.name}</h3>
+          <h6 className="header-name">{board.name}</h6>
           {!isBigScreen && (
             <img
               src={openDropdown ? iconUp : iconDown}

@@ -24,6 +24,10 @@
 .column {
   min-width: 280px;
 }
+.col-border{
+  border-right: 1px solid rgba(43, 44, 55, 0.1);
+  height: auto;
+}
 
 .col-name {
   color: #828fa3;

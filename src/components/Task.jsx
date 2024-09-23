@@ -35,8 +35,7 @@ export default function Task({ taskIndex, colIndex }) {
       >
         <p className="task-title heading-M">{task.title}</p>
         <p className="num-of-subtasks text-M">
-          {/* {completed} of  */}
-          {subtasks.length} assignee
+          {completed} of  {subtasks.length} subtask
         </p>
       </div>
       {isTaskModalOpen && (

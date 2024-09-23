@@ -7,6 +7,12 @@
   padding-top: 88px;
 }
 
+.content{
+  display: flex;
+   flex-direction:column;
+}
+
+
 .dark .board {
   background: #20212c;
 }
@@ -57,7 +63,7 @@
 
 @media only screen and (min-width: 768px) {
   .board {
-    padding: 24px;
-    padding-top: 104px;
+    /* padding: 24px;
+    padding-top: 104px; */
   }
 }

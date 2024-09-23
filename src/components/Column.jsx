@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-export default function Column({ colIndex }) {
+export default function Column({ colIndex ,color}) {
   const dispatch = useDispatch();
   const boards = useSelector((state) => state.boards);
   const board = boards.find((board) => board.isActive === true);
@@ -55,9 +55,13 @@ export default function Column({ colIndex }) {
   return (
     <div className="column">
           <div>
-            <p className="col-name heading-S">
-                  {col.name} ({col.tasks.length})
-            </p>
+
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 10, justifyContent: 'center' }} className="col-border">
+           <p style={{ width: '10px', height: '10px', border: '0px solid #000', borderRadius: '100%', backgroundColor: `${color}`, padding: '5px' }}></p>
+                <p className="col-name heading-S">
+                {col.name} ({col.tasks.length})
+                </p>
+        </div>
             
             { col.tasks.map((task, index) => {
                        

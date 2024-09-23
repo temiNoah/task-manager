@@ -8,6 +8,8 @@ import EmptyBoard from "./EmptyBoard";
 import Sidebar from "./Sidebar";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import boardsSlice from "../redux/boardsSlice";
+import colors from "../utility/colors.json"
+import ToolsBar from "./ToolsBar";
 
 export default function Board() {
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ export default function Board() {
     dispatch(boardsSlice.actions.dragTask({ colIndex, prevColIndex, taskIndex ,prevTaskIndex}));
   }
 
-
+  
 
   return (
     <div
@@ -43,31 +45,40 @@ export default function Board() {
         />
       )}
 
+
+
       {columns.length > 0 ? (
-        <>
-          <DragDropContext onDragEnd={ handleOnDragEnd }>
-          {  columns.map((col, index) => {
-                return <Droppable droppableId={index+""}>
-                            {
-                              (provided)=>(
-                                <div {...provided.droppableProps} ref={provided.innerRef} style={{borderWidth:0,borderStyle:'solid'}}>
-                                    <Column key={index} colIndex={index} />
-                                </div>
-                              )
-                            }
-                        </Droppable>
-              })  
-          }
-          </DragDropContext>
-          <div
-            className="add-column-column heading-XL"
-            onClick={() => {
-              setIsBoardModalOpen(true);
-            }}
-          >
-            + New Column
-          </div>
-        </>
+        <div  className="content">
+             
+            <ToolsBar/>
+             
+              <div style={{width:'100%' ,display:'flex',flexDirection:'row'}}>
+                
+                <DragDropContext onDragEnd={ handleOnDragEnd }>
+                {  columns.map((col, index) => {
+                      return <Droppable droppableId={index+""}>
+                                  {
+                                    (provided)=>(
+                                      <div {...provided.droppableProps} ref={provided.innerRef} style={{borderWidth:0,borderStyle:'solid'}}>
+                                          <Column key={index} colIndex={index}  color={index < colors.length? colors[index] : colors[0]}/>
+                                      </div>
+                                    )
+                                  }
+                              </Droppable>
+                    })  
+                }
+                </DragDropContext>
+                <div
+                  className="add-column-column heading-XL"
+                  onClick={() => {
+                    setIsBoardModalOpen(true);
+                  }}
+                >
+                  + New Column
+                </div>
+              </div>
+        </div>
+
       ) : (
         <EmptyBoard type="edit" />
       )}

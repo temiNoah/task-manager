@@ -25,7 +25,7 @@ export default function TaskModal({ taskIndex, colIndex, setIsTaskModalOpen}) {
       completed++;
     }
   });
-
+ 
   const [status, setStatus] = useState(task.status);
   const [newColIndex, setNewColIndex] = useState(columns.indexOf(col));
   
@@ -99,14 +99,16 @@ export default function TaskModal({ taskIndex, colIndex, setIsTaskModalOpen}) {
         <p className="task-description text-L">{task.description}</p>
        
         <p className="task-description text-L" style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span>Start Date: {task.startDate.toLocaleDateString()}</span> 
-          <span>End Date: {task.endDate.toLocaleDateString()}</span>
+          <span>Start Date: {new Date(task.startDate).toLocaleDateString()}</span> 
+          <span>End Date: {new Date(task.endDate).toLocaleDateString()}</span>
        </p>
 
-        <p className="task-description text-L">Level: {task.priority}</p>
+        <p className="task-description text-L">Priority: {task.priority}</p>
+
+        <p className="task-description text-L">Assignee: {task.assignee}</p>
 
         <p className="subtasks-completed heading-S">
-         Assignee {/*   ({completed} of {subtasks.length}) */}
+            ({completed} of {subtasks.length}) subtask
         </p>
         {subtasks.map((subtask, index) => {
           return (

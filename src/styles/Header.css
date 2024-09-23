@@ -34,6 +34,10 @@ header .elipsis-menu {
 .header-name-container img {
   cursor: pointer;
 }
+.header-name{
+     font-family:  sans-serif Geneva, Verdana;
+     font-weight: 100;
+}
 .add-task-btn {
   margin-right: 16px;
   background: #635fc7;
