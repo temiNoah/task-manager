@@ -52,7 +52,7 @@ export default function Board() {
              
             <ToolsBar/>
              
-              <div style={{width:'100%' ,display:'flex',flexDirection:'row'}}>
+              <div style={{width:'100%' ,display:'flex',flexDirection:'row',gap:10}}>
                 
                 <DragDropContext onDragEnd={ handleOnDragEnd }>
                 {  columns.map((col, index) => {
