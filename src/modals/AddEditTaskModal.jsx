@@ -98,7 +98,7 @@ export default function AddEditTaskModal({
       );
     } else {
 
-      alert("updated")
+     
       dispatch(
         boardsSlice.actions.editTask({
           title,

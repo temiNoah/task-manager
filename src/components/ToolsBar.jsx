@@ -3,7 +3,9 @@ import '../styles/Toolsbar.css'
 export default function ToolsBar({ colIndex, color }) {
     return (
         <div className="toolsbar">
-            <div className='filter'> <i class="ri-filter-3-line"></i><p></p></div>
+            <div className='filter tools'><i class="ri-filter-3-line"></i> <span className='caption'>Filter</span></div>
+            <div className='list tools'><i class="ri-list-check"></i> <span className='caption'>List</span></div>
+            <div className='grid tools'><i class="ri-layout-grid-2-line"></i> <span className='caption'>Grid</span></div>
        </div>
     )
 }

@@ -7,10 +7,36 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
+   
 }
 
+.tools{
+    display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        margin-right: 20px;
+        min-width: 50px;
+        justify-content: space-between;
+}
+
+div.tools > i{
+    font-size: 12px;
+}
+.caption{
+     font-size: 12px;
+     font-weight: 100;
+}
 .filter{
     display: flex;
     flex-direction: row;
     cursor:pointer;
+   
+}
+
+.list{
+
+}
+
+.grid {
+
 }
